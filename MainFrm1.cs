@@ -48,7 +48,7 @@ namespace SocketClient
             {
                 var proxSocket = serverSocket.Accept();
 
-                this.AppendTextToTxtLog(string.Format("客户端:{0}链接上了", proxSocket.RemoteEndPoint.ToString()));
+                //this.AppendTextToTxtLog(string.Format("客户端:{0}链接上了", proxSocket.RemoteEndPoint.ToString()));
 
                 ClientProxSocketList.Add(proxSocket);
 
@@ -108,7 +108,7 @@ namespace SocketClient
                 string plainmessage = AESfundiv[1];//获得明文数据信息
 
                 string funback = AESfundiv[2];//获得返回值判断信息
-                MessageBox.Show(plainmessage + "," + signmessage + "客户端系统");
+                //MessageBox.Show(plainmessage + "," + signmessage + "客户端系统");
                 string signdata = funcsum.messagesigncheck(plainmessage, signmessage);
                 if (signdata != "1")
                 {
@@ -180,7 +180,7 @@ namespace SocketClient
         }
         
 
-        private void StopContnet()
+        /*private void StopContnet()
         {
             try
             {
@@ -194,12 +194,13 @@ namespace SocketClient
             {
 
             }
-        }
+        }*/
 
         private void MainFrm1_FormClosed(object sender, FormClosedEventArgs e)
         {
             //判断是否已经连接，如果连接那就关闭
-            StopContnet();
+            // StopContnet();
+            return;
         }
     }
 }
