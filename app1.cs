@@ -146,14 +146,15 @@ namespace SocketClient
                 if(Funid=="2" && funback=="1")
                 {
                     Form loginform = new MainFrm1();
-                    //this.Close();
+                    
                     new System.Threading.Thread(() =>
                     {
                         Application.Run(loginform);
                     }
                     ).Start();
-                    
-                    
+                    this.Close();
+
+
 
                 }
                 else
@@ -180,6 +181,11 @@ namespace SocketClient
             {
 
             }
+        }
+
+        private void app1_Load(object sender, EventArgs e)
+        {
+            Control.CheckForIllegalCrossThreadCalls = false;
         }
     }
 }

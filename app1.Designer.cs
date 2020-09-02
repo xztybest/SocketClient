@@ -134,6 +134,7 @@
             this.Controls.Add(this.button1);
             this.Name = "app1";
             this.Text = "客户端";
+            this.Load += new System.EventHandler(this.app1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
